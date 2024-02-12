@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Button, Col, Container, Row } from "react-bootstrap";
+import mickey from "/Users/charmainepasicolan/tasks/src/images/mickey.png";
 
 function App(): JSX.Element {
     return (
@@ -46,7 +47,7 @@ function App(): JSX.Element {
                             alt="A picture of my dog Mickey"
                             width="531"
                             height="537"
-                            src={require("/Users/charmainepasicolan/tasks/src/images/mickey.png")}
+                            src={mickey}
                         />
                     </Col>
                 </Row>
