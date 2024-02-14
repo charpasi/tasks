@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import mickey from "/Users/charmainepasicolan/tasks/src/images/mickey.png";
-
+import mickey from "./mickey.jpg";
+console.log(mickey);
 function App(): JSX.Element {
     return (
         <div className="App">
@@ -44,10 +44,10 @@ function App(): JSX.Element {
                             }}
                         ></div>
                         <img
+                            src={mickey}
                             alt="A picture of my dog Mickey"
                             width="531"
                             height="537"
-                            src={mickey}
                         />
                     </Col>
                 </Row>
