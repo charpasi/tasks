@@ -8,8 +8,33 @@ Browserslist: caniuse-lite is outdated. Please run:
 Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 PASS src/text.test.tsx
+  ● Console
+
+    console.log
+      mickey.jpg
+
+      at Object.<anonymous> (src/App.tsx:5:9)
+
 PASS src/App.test.tsx
+  ● Console
+
+    console.log
+      mickey.jpg
+
+      at Object.<anonymous> (src/App.tsx:5:9)
+
+PASS src/HtmlCss.test.tsx
+  ● Console
+
+    console.log
+      mickey.jpg
+
+      at Object.<anonymous> (src/App.tsx:5:9)
+
 ----------|---------|----------|---------|---------|-------------------
 File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ----------|---------|----------|---------|---------|-------------------
@@ -17,8 +42,8 @@ All files |     100 |      100 |     100 |     100 |
  App.tsx  |     100 |      100 |     100 |     100 |                   
 ----------|---------|----------|---------|---------|-------------------
 
-Test Suites: 2 passed, 2 total
-Tests:       2 passed, 2 total
+Test Suites: 3 passed, 3 total
+Tests:       9 passed, 9 total
 Snapshots:   0 total
-Time:        1.862 s
+Time:        2.701 s
 Ran all test suites.
