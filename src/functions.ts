@@ -12,10 +12,10 @@ export function fahrenheitToCelius(temperature: number): number {
  * if the number is greater than zero.
  */
 export function add3(first: number, second: number, third: number): number {
-    let sum : number = 0;
-    sum = first > 0 ? sum+first : sum;
-    sum = second > 0 ? sum+second : sum;
-    sum = third > 0 ? sum+third : sum;
+    let sum = 0;
+    sum = first > 0 ? sum + first : sum;
+    sum = second > 0 ? sum + second : sum;
+    sum = third > 0 ? sum + third : sum;
     return sum;
 }
 
@@ -24,7 +24,7 @@ export function add3(first: number, second: number, third: number): number {
  * mark added to the end.
  */
 export function shout(message: string): string {
-    return message.toUpperCase + "!";
+    return message.toUpperCase() + "!";
 }
 
 /**
@@ -32,7 +32,8 @@ export function shout(message: string): string {
  * mark. Do not use an `if` statement in solving this question.
  */
 export function isQuestion(message: string): boolean {
-    return message[-1] === "?";
+    return message.charAt(message.length - 1) === "?";
+}
 
 /**
  * Consumes a word (a string) and returns either `true`, `false`, or `null`. If the string
@@ -40,8 +41,10 @@ export function isQuestion(message: string): boolean {
  * upper or lower case), then return `false`. Otherwise, return `null`.
  */
 export function convertYesNo(word: string): boolean | null {
-    if (word.toLowerCase === ""){
+    if (
+        word === "" ||
+        (word.toLowerCase() !== "yes" && word.toLowerCase() !== "no")
+    )
         return null;
-    }
-    return word.toLowerCase === "yes";
+    return word.toLowerCase() === "yes";
 }
