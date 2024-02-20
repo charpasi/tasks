@@ -6,8 +6,10 @@
  */
 export function bookEndList(numbers: number[]): number[] {
     const newArray = [];
-    newArray.push(numbers[0]);
-    newArray.push(numbers[numbers.length - 1]);
+    if (numbers.length > 0) {
+        newArray.push(numbers[0]);
+        newArray.push(numbers[numbers.length - 1]);
+    }
     return newArray;
 }
 
@@ -39,7 +41,10 @@ export function stringsToIntegers(numbers: string[]): number[] {
  */
 // Remember, you can write functions as lambdas too! They work exactly the same.
 export const removeDollars = (amounts: string[]): number[] => {
-    return [];
+    const newAmounts = amounts.map((amount: string): string =>
+        amount.includes("$") ? amount.replace("$", "") : amount
+    );
+    return stringsToIntegers(newAmounts);
 };
 
 /**
@@ -48,7 +53,15 @@ export const removeDollars = (amounts: string[]): number[] => {
  * in question marks ("?").
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
-    return [];
+    const filteredMessages = messages.filter(
+        (message) => message.charAt(message.length - 1) !== "?"
+    );
+    const shout = filteredMessages.map((message: string): string =>
+        message.charAt(message.length - 1) === "!"
+            ? message.toUpperCase()
+            : message
+    );
+    return shout;
 };
 
 /**
@@ -56,7 +69,8 @@ export const shoutIfExclaiming = (messages: string[]): string[] => {
  * 4 letters long.
  */
 export function countShortWords(words: string[]): number {
-    return 0;
+    const countWords = words.filter((word) => word.length < 4);
+    return countWords.length;
 }
 
 /**
@@ -65,7 +79,10 @@ export function countShortWords(words: string[]): number {
  * then return true.
  */
 export function allRGB(colors: string[]): boolean {
-    return false;
+    return colors.every(
+        (color: string): boolean =>
+            color === "red" || color === "green" || color === "blue"
+    );
 }
 
 /**
@@ -76,7 +93,12 @@ export function allRGB(colors: string[]): boolean {
  * And the array [] would become "0=0".
  */
 export function makeMath(addends: number[]): string {
-    return "";
+    const withPlus = addends.length > 0 ? addends.join("+") : 0;
+    const sum = addends.reduce(
+        (currTotal: number, num: number) => currTotal + num,
+        0
+    );
+    return sum + "=" + withPlus;
 }
 
 /**
@@ -89,5 +111,21 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    return [];
+    const negativeIndex = values.findIndex(
+        (value: number): boolean => value < 0
+    );
+    const valuesNoNeg = values.slice(0, negativeIndex);
+    const valuesCopy = [...values];
+    const sum = valuesNoNeg.reduce(
+        (currentTotal: number, num: number) => currentTotal + num,
+        0
+    );
+    const posSum = valuesCopy.reduce(
+        (currentTotal: number, num: number) => currentTotal + num,
+        0
+    );
+    negativeIndex === -1
+        ? valuesCopy.push(posSum)
+        : valuesCopy.splice(negativeIndex + 1, 0, sum);
+    return valuesCopy;
 }
