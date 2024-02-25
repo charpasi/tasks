@@ -1,3 +1,4 @@
+import { isOptionalChain } from "typescript";
 import { Question, QuestionType } from "./interfaces/question";
 
 /**
@@ -83,16 +84,18 @@ export function toShortForm(question: Question): string {
  * Check the unit tests for more examples of what this looks like!
  */
 export function toMarkdown(question: Question): string {
-    let options = "";
     if (question.type === "multiple_choice_question") {
-        for (let i = 0; i < question.options.length; i++) {
-            if (i === question.options.length - 1) {
-                options += "- " + question.options[i];
-            } else {
-                options += "- " + question.options[i] + "\n";
-            }
-        }
-        return "# " + question.name + "\n" + question.body + "\n" + options;
+        const options = question.options.map(
+            (option: string): string => "- " + option
+        );
+        return (
+            "# " +
+            question.name +
+            "\n" +
+            question.body +
+            "\n" +
+            options.join("\n")
+        );
     } else {
         return "# " + question.name + "\n" + question.body;
     }
