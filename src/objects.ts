@@ -1,4 +1,3 @@
-import { isOptionalChain } from "typescript";
 import { Question, QuestionType } from "./interfaces/question";
 
 /**
