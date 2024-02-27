@@ -1,6 +1,6 @@
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
-import { makeBlankQuestion } from "./objects";
+import { addOption, duplicateQuestion, makeBlankQuestion } from "./objects";
 
 /**
  * Consumes an array of questions and returns a new array with only the questions
@@ -191,7 +191,17 @@ export function changeQuestionTypeById(
     targetId: number,
     newQuestionType: QuestionType
 ): Question[] {
-    return [];
+    return questions.map(
+        (question: Question): Question => ({
+            ...question,
+            type: question.id === targetId ? newQuestionType : question.type,
+            options:
+                question.id === targetId &&
+                newQuestionType !== "multiple_choice_question"
+                    ? []
+                    : question.options
+        })
+    );
 }
 
 /**
@@ -210,11 +220,22 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string
 ): Question[] {
-    return [];
+    const questionsCopy = [...questions];
+    return questionsCopy.map((question: Question) => {
+        if (question.id === targetId) {
+            const options = [...question.options];
+            targetOptionIndex === -1
+                ? options.push(newOption)
+                : (options[targetOptionIndex] = newOption);
+            return { ...question, options: options };
+        } else {
+            return question;
+        }
+    });
 }
 
 /***
- * Consumes an array of questions, and produces a new array based on the original array.
+ * Consumes an array of questions, and prodXces a new array based on the original array.
  * The only difference is that the question with id `targetId` should now be duplicated, with
  * the duplicate inserted directly after the original question. Use the `duplicateQuestion`
  * function you defined previously; the `newId` is the parameter to use for the duplicate's ID.
@@ -224,5 +245,15 @@ export function duplicateQuestionInArray(
     targetId: number,
     newId: number
 ): Question[] {
-    return [];
+    const questionsCopy = [...questions];
+    const targetIndex: number = questionsCopy.findIndex(
+        (question: Question): boolean =>
+            question === findQuestion(questions, targetId)
+    );
+    questionsCopy.splice(
+        1 + targetIndex,
+        0,
+        duplicateQuestion(newId, questions[targetIndex])
+    );
+    return questionsCopy;
 }
