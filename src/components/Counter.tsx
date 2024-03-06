@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-
+React;
 export function Counter(): JSX.Element {
     const [value, setValue] = useState<number>(0);
     return (

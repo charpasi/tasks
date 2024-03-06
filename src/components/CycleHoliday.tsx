@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-
+React;
 export function CycleHoliday(): JSX.Element {
     type Holiday = "🎉" | "💞" | "🎃" | "🦃" | "🎄";
     const [holiday, setHoliday] = useState<Holiday>("🎉");

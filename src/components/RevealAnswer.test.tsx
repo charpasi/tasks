@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { RevealAnswer } from "./RevealAnswer";
-
+React;
 describe("RevealAnswer Component tests", () => {
     beforeEach(() => {
         render(<RevealAnswer />);
