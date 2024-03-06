@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { DoubleHalf } from "./bad-components/DoubleHalf";
+//import { DoubleHalf } from "./bad-components/DoubleHalf";
 import { ColoredBox } from "./bad-components/ColoredBox";
 import { ShoveBox } from "./bad-components/ShoveBox";
 import { ChooseTeam } from "./bad-components/ChooseTeam";
