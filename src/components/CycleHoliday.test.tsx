@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { CycleHoliday } from "./CycleHoliday";
-
+React;
 describe("CycleHoliday Component tests", () => {
     beforeEach(() => {
         render(<CycleHoliday />);
