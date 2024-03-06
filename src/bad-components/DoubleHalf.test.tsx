@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { DoubleHalf } from "./DoubleHalf";
-
+React;
 describe("DoubleHalf Component tests", () => {
     beforeEach(() => {
         render(<DoubleHalf />);

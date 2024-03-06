@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { ShoveBox } from "./ShoveBox";
-
+React;
 describe("ShoveBox Component tests", () => {
     beforeEach(() => {
         render(<ShoveBox />);
