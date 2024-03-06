@@ -6,6 +6,10 @@ import { CycleHoliday } from "./components/CycleHoliday";
 import { RevealAnswer } from "./components/RevealAnswer";
 import { StartAttempt } from "./components/StartAttempt";
 import { TwoDice } from "./components/TwoDice";
+<<<<<<< HEAD
+=======
+React;
+>>>>>>> 15a54fbe21490def12040f8da88110844bacba5c
 function App(): JSX.Element {
     return (
         <div className="App">
