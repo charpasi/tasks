@@ -37,7 +37,7 @@ export function TwoDice(): JSX.Element {
             >
                 Roll Right
             </Button>
-            <span data-testid="left-die">{dice1}</span>.
+            :<span data-testid="left-die">{dice1}</span>.
             <span data-testid="right-die">{dice2}</span>.
             {dice1 === 1 && dice1 === dice2 && <div>Lose</div>}
             {dice1 !== 1 && dice1 === dice2 && <div>Win</div>}

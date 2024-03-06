@@ -10,6 +10,4 @@ export function RevealAnswer(): JSX.Element {
             {visible && <div>42</div>}.
         </div>
     );
-export function RevealAnswer(): JSX.Element {
-    return <div>Reveal Answer</div>;
 }
