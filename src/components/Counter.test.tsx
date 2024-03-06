@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { Counter } from "./Counter";
-
+React;
 describe("Counter Component tests", () => {
     beforeEach(() => {
         render(<Counter />);

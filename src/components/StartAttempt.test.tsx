@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { StartAttempt } from "./StartAttempt";
-
+React;
 /***
  * Helper function to extract a number from an HTMLElement's textContent.
  *
