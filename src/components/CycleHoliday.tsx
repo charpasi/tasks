@@ -47,4 +47,7 @@ export function CycleHoliday(): JSX.Element {
             {"Holiday: " + holiday}
         </div>
     );
+
+export function CycleHoliday(): JSX.Element {
+    return <div>Cycle Holiday</div>;
 }

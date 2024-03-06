@@ -6,7 +6,7 @@ import { CycleHoliday } from "./components/CycleHoliday";
 import { RevealAnswer } from "./components/RevealAnswer";
 import { StartAttempt } from "./components/StartAttempt";
 import { TwoDice } from "./components/TwoDice";
-
+React;
 function App(): JSX.Element {
     return (
         <div className="App">
