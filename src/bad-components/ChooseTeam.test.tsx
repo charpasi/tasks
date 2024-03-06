@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { ChooseTeam } from "./ChooseTeam";
-
+React;
 describe("ChooseTeam Component tests", () => {
     beforeEach(() => {
         render(<ChooseTeam />);

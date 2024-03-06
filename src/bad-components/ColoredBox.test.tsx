@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { ColoredBox } from "./ColoredBox";
-
+React;
 describe("ColoredBox Component tests", () => {
     beforeEach(() => {
         render(<ColoredBox />);
